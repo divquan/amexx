@@ -2,13 +2,40 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
+import google from "@/public/images/google.png";
+import ColombiaUniversity from "@/public/images/ColombiaUniversity.png";
+import drexel from "@/public/images/drexel.png";
+import netflix from "@/public/images/netflix.png";
+import Image from "next/image";
+
 const SuccessStory = () => {
   return (
-    <div className="flex flex-col items-center gap-12">
+    <div className="flex flex-col items-center gap-12 max-w-5xl px-3">
+      <div className="flex flex-col  items-start w-full mt-10">
+        <h2 className="text-2xl font-bold text-left">
+          Our Clients Get Into The World's <br /> Most Competitive Schools &
+          Companies
+        </h2>
+        <div className="flex flex-wrap">
+          {partnerImages.map((item, index) => {
+            return (
+              <Image
+                src={item.src}
+                width={item.height}
+                height={item.height}
+                alt="dfs"
+                key={index}
+                blurDataURL={item.blurDataURL}
+                className="w-1/2 object-contain"
+              />
+            );
+          })}
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {succesStories.map((item, index) => {
           return (
-            <Link href="#">
+            <Link href="#" key={index}>
               <li className=" w-80 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-5 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
                 <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
                   {item.text}
@@ -72,3 +99,5 @@ const succesStories = [
     position: "Education",
   },
 ];
+
+const partnerImages = [google, ColombiaUniversity, netflix, drexel];

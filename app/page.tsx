@@ -1,9 +1,10 @@
 import Hersection from "@/components/home/Hersection";
-import Midsection from "@/components/home/Midsection";
+import CommunitySection from "@/components/home/CommunitySection";
 import Section2 from "@/components/home/Section2";
 import SuccessStory from "@/components/home/SuccessStory";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <Hersection />
       <Section2 />
       <SuccessStory />
-      <Midsection />
+      <CommunitySection />
+      <Footer />
     </main>
   );
 }

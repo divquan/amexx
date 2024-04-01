@@ -5,24 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import icon1 from "@/public/icons/sms-edit.svg";
 import { MailCheck, Notebook, NotebookPen } from "lucide-react";
-import google from "@/public/images/google.png";
-import ColombiaUniversity from "@/public/images/ColombiaUniversity.png";
-import drexel from "@/public/images/drexel.png";
-import netflix from "@/public/images/netflix.png";
 
 const Section2 = () => {
   return (
-    <div className="max-w-5xl flex flex-col items-center gap-16">
-      <div className="flex flex-row items-center">
-        <div className=" flex-1">
+    <div className="max-w-5xl flex flex-col items-center gap-16 p-3 ">
+      <div className="flex flex-col md:flex-row items-center ">
+        <div className="flex-1 ">
           <Image
             alt="unlock your potentials"
             src={heroImage}
             height={heroImage.height}
             width={heroImage.width}
+            className=""
           />
         </div>
-        <div className=" flex flex-col gap-3 flex-1 justify-around">
+        <div className=" flex flex-col gap-3 flex-1 max-w-md">
           <h2 className="text-2xl md:text-4xl text-secondary font-bold ">
             don't break the BANK!
           </h2>
@@ -50,10 +47,10 @@ const Section2 = () => {
           </div>
         </div>
       </div>
-      <ul className="flex  gap-12 items-stretch h-70">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 h-70">
         {sectionFooterItems.map((item, index) => {
           return (
-            <Link href="#">
+            <Link href="#" key={index}>
               <li className=" w-72 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
                 <div>
                   <MailCheck className="mb-3  mr-2 delay-100 icon-slide-in transition-transform duration-500 ease-in-out animate-spring" />
@@ -69,27 +66,6 @@ const Section2 = () => {
           );
         })}
       </ul>
-      <div className="flex flex-col  items-start w-full mt-10">
-        <h2 className="text-2xl font-bold text-left">
-          Our Clients Get Into The World's <br /> Most Competitive Schools &
-          Companies
-        </h2>
-        <div className="flex gap-5 justify-between">
-          {partnerImages.map((item, index) => {
-            return (
-              <Image
-                src={item.src}
-                width={item.height}
-                height={item.height}
-                alt="dfs"
-                key={index}
-                blurDataURL={item.blurDataURL}
-                className="w-full object-contain"
-              />
-            );
-          })}
-        </div>
-      </div>
     </div>
   );
 };
@@ -119,5 +95,3 @@ const sectionFooterItems = [
     icon: icon1,
   },
 ];
-
-const partnerImages = [google, ColombiaUniversity, netflix, drexel];
