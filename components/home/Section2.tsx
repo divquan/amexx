@@ -21,7 +21,7 @@ const Section2 = () => {
         </div>
         <div className=" flex flex-col gap-3 flex-1 max-w-md">
           <h2 className="text-2xl md:text-4xl text-secondary font-bold ">
-            don't break the BANK!
+            don&#39;t break the BANK!
           </h2>
           <h2 className="text-2xl md:text-4xl text-primary font-extrabold">
             learn about our process

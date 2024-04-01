@@ -20,7 +20,7 @@ const Hersection = () => {
         </h1>
         <p className="max-w-3xl ">
           AmericanExpress Travel Consult (AMEXT) gears you up to unleash your
-          capabilities, whether it's embarking on educational journeys,
+          capabilities, whether it&#39;s embarking on educational journeys,
           enrolling in schools abroad, or securing employment opportunities.
         </p>
         <Button className="w-fit py-4 px-7">Learn about our process</Button>

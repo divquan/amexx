@@ -13,7 +13,7 @@ const SuccessStory = () => {
     <div className="flex flex-col items-center gap-12 max-w-5xl px-3">
       <div className="flex flex-col  items-start w-full mt-10">
         <h2 className="text-2xl font-bold text-left">
-          Our Clients Get Into The World's <br /> Most Competitive Schools &
+          Our Clients Get Into The World&#39;s <br /> Most Competitive Schools &
           Companies
         </h2>
         <div className="flex flex-wrap">
