@@ -13,7 +13,6 @@ export default function Home() {
       <Section2 />
       <SuccessStory />
       <CommunitySection />
-      <Footer />
     </main>
   );
 }

@@ -13,7 +13,7 @@ const CommunitySection = () => {
         height={image.height}
         width={image.width}
       ></Image>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col  items-center gap-6">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col  items-center gap-6 w-full">
         <h1 className="text-2xl md:text-4xl font-bold">Expert team</h1>
         <p className="text-center">
           Our consultants have a track record of crafting applications <br />

@@ -26,17 +26,17 @@ const SuccessStory = () => {
                 alt="dfs"
                 key={index}
                 blurDataURL={item.blurDataURL}
-                className="w-1/2 object-contain"
+                className="w-1/2 md:w-1/4 object-contain"
               />
             );
           })}
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 h-70 gap-2">
         {succesStories.map((item, index) => {
           return (
             <Link href="#" key={index}>
-              <li className=" w-80 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-5 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
+              <li className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
                 <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
                   {item.text}
                 </p>
@@ -52,7 +52,7 @@ const SuccessStory = () => {
             </Link>
           );
         })}
-      </div>
+      </ul>
       <div className="flex flex-col gap-8 items-center">
         <h3 className="font-bold text-lg">
           Explore Amazing Stories From Our Client

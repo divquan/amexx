@@ -47,11 +47,11 @@ const Section2 = () => {
           </div>
         </div>
       </div>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 h-70">
+      <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 h-70 gap-2">
         {sectionFooterItems.map((item, index) => {
           return (
             <Link href="#" key={index}>
-              <li className=" w-72 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
+              <li className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
                 <div>
                   <MailCheck className="mb-3  mr-2 delay-100 icon-slide-in transition-transform duration-500 ease-in-out animate-spring" />
                   <h3 className="delay-75 font-extrabold text-black icon-slide-in transition-transform duration-500 ease-in-out">
