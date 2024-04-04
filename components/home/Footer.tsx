@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin } from "lucide-react";
+import { ArrowRight, Linkedin, LinkedinIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
@@ -52,15 +52,12 @@ const Footer = () => {
         </div>
         <hr />
         <div>
-          <div>
+          <div className="flex ">
             {socials.map((item, index) => (
               <Link href={item.icon}>
-                <Button
-                  variant="outline"
-                  className="rounded-full bg-opacity-0 "
-                >
-                  <Linkedin className=" " />{" "}
-                </Button>
+                <div className="rounded-full  ">
+                  <LinkedinIcon className=" " />{" "}
+                </div>
               </Link>
             ))}
           </div>
