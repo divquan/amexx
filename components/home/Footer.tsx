@@ -1,13 +1,24 @@
-import { ArrowRight, Linkedin, LinkedinIcon } from "lucide-react";
+import {
+  ArrowRight,
+  Linkedin,
+  LinkedinIcon,
+  LucideLinkedin,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import fb from "@/public/images/fb.svg";
+import linkedin from "@/public/images/Linkedin.svg";
+import { TiSocialLinkedin, TiSocialTwitter } from "react-icons/ti";
 
+import x from "@/public/images/x.svg";
+import Image from "next/image";
+import { RiFacebookFill } from "react-icons/ri";
 const Footer = () => {
   return (
-    <div className="bg-black bg-opacity-80 text-white w-full flex items-center justify-center py-8">
+    <div className="bg-black bg-opacity-80 text-white w-full flex items-center justify-center py-12 px-3">
       <div className="max-w-4xl w-full ">
-        <div className="flex gap-3 justify-between items-start w-full pb-8">
+        <div className="flex gap-3 flex-col md:flex-row justify-between items-start w-full pb-8">
           <div className="flex flex-col gap-7">
             <h2 className="font-bold text-lg">Logo</h2>
             <div className="flex flex-col gap-2">
@@ -15,7 +26,7 @@ const Footer = () => {
               <span>support@amex.com</span>
             </div>
           </div>
-          <div className="flex gap-12 ">
+          <div className="flex gap-12 flex-col md:flex-row">
             {footerLinks.map((item, index) => {
               return (
                 <div key={"footer-key" + index} className="flex flex-col gap-5">
@@ -51,12 +62,12 @@ const Footer = () => {
           </div>
         </div>
         <hr />
-        <div>
-          <div className="flex ">
+        <div className="pt-8">
+          <div className="flex  gap-3">
             {socials.map((item, index) => (
-              <Link href={item.icon}>
-                <div className="rounded-full  ">
-                  <LinkedinIcon className=" " />{" "}
+              <Link href={item.url} key={index}>
+                <div className="rounded-full h-[35px] w-[35px] border border-gray-500 p-2 ">
+                  {item.icon}
                 </div>
               </Link>
             ))}
@@ -91,7 +102,7 @@ const footerLinks = [
 ];
 
 const socials = [
-  { icon: "", url: "" },
-  { icon: "", url: "" },
-  { icon: "", url: "" },
+  { icon: <TiSocialLinkedin className="h-full w-full" />, url: "" },
+  { icon: <RiFacebookFill className="h-full w-full" />, url: "" },
+  { icon: <TiSocialTwitter className="h-full w-full" />, url: "" },
 ];
