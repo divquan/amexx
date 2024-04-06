@@ -14,13 +14,21 @@ import { TiSocialLinkedin, TiSocialTwitter } from "react-icons/ti";
 import x from "@/public/images/x.svg";
 import Image from "next/image";
 import { RiFacebookFill } from "react-icons/ri";
+import logo from "@/public/images/logo.png";
+
 const Footer = () => {
   return (
     <div className="bg-black bg-opacity-80 text-white w-full flex items-center justify-center py-12 px-3">
       <div className="max-w-4xl w-full ">
         <div className="flex gap-3 flex-col md:flex-row justify-between items-start w-full pb-8">
           <div className="flex flex-col gap-7">
-            <h2 className="font-bold text-lg">Logo</h2>
+            <Image
+              src={logo.src}
+              height={logo.height}
+              width={logo.width}
+              alt="logo"
+              className="w-auto h-auto"
+            />{" "}
             <div className="flex flex-col gap-2">
               <Link href={"tel:+1 (7635) 547-12-97"}>+1 (7635) 547-12-97</Link>
               <span>support@amex.com</span>
