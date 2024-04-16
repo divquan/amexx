@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import icon1 from "@/public/icons/sms-edit.svg";
 import { MailCheck, Notebook, NotebookPen } from "lucide-react";
+import { stats } from "@/Constants/appData";
 
 const Section2 = () => {
   return (
@@ -71,12 +72,6 @@ const Section2 = () => {
 };
 
 export default Section2;
-
-const stats = [
-  { title: "93%", caption: "Our success rate" },
-  { title: "100+", caption: "Clients served since 2018" },
-  { title: "$12M+", caption: "scholarships and income secured" },
-];
 
 const sectionFooterItems = [
   {

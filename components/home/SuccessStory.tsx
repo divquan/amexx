@@ -2,11 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
 
-import google from "@/public/images/google.png";
-import ColombiaUniversity from "@/public/images/ColombiaUniversity.png";
-import drexel from "@/public/images/drexel.png";
-import netflix from "@/public/images/netflix.png";
 import Image from "next/image";
+import { partnerImages } from "@/Constants/appData";
 
 const SuccessStory = () => {
   return (
@@ -99,5 +96,3 @@ const succesStories = [
     position: "Education",
   },
 ];
-
-const partnerImages = [google, ColombiaUniversity, netflix, drexel];
