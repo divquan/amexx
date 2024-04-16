@@ -12,7 +12,7 @@ const page = () => {
             Land your dream job and relocate to Canada or US with us
           </h1>
           <span className="text-muted-foreground">
-            Join our clients at the world's top companies
+            Join our clients at the world&apos;s top companies
           </span>
         </div>
         <div className="flex gap-4 overflow-x-hidden h-[90px]">
