@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import logo from "@/public/images/logo.png";
 import Image from "next/image";
+
 const Navbar = () => {
   const pathname = usePathname().split("/")[1];
   return (
@@ -22,7 +23,7 @@ const Navbar = () => {
         height={logo.height}
         width={logo.width}
         alt="logo"
-        className="w-auto h-10"
+        className="w-auto h-12"
       />
       <div className="gap-2  hidden md:flex">
         {links.map((link, index) => (
@@ -73,7 +74,7 @@ export default Navbar;
 
 const links = [
   { name: "Home", url: "" },
-  { name: "About", url: "about" },
+  { name: "About", url: "about-us" },
   { name: "Services", url: "services" },
   { name: "Success Stories", url: "success-stories" },
   { name: "Contact Us", url: "contact-us" },
