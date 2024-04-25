@@ -1,38 +1,32 @@
 import { partnerImages, stats } from "@/Constants/appData";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
+import { FaCircleCheck } from "react-icons/fa6";
+import PartnerInstitutions from "./_components/partnerInstitutions";
+import OfferCard from "./_components/offerCard";
+import TestimonyCard from "./_components/testimonyCard";
 
 const page = () => {
   return (
     <div className="min-h-screen flex flex-col gap-6">
-      <div>
-        <div>
-          <h1 className="text-2xl md:text-3xl font-semibold">
+      <div className=" mb-14">
+        <div className="mb-8">
+          <h1 className="text-2xl md:text-3xl font-semibold mb-2">
             Land your dream job and relocate to Canada or US with us
           </h1>
           <span className="text-muted-foreground">
             Join our clients at the world&apos;s top companies
           </span>
         </div>
-        <div className="flex gap-4 overflow-x-hidden h-[90px]">
-          {partnerImages.map((item, index) => {
-            return (
-              <Image
-                {...item}
-                alt="dfs"
-                key={index}
-                className="w-1/2 md:w-1/4 object-contain"
-              />
-            );
-          })}
-        </div>
+        <PartnerInstitutions />
       </div>
-      <div></div>
 
-      <div className="flex flex-col gap-8">
-        <div>
-          <h1 className="text-2xl md:text-3xl font-semibold">
+      <div className="flex flex-col gap-5 mb-16">
+        <div className="mb-4">
+          <h1 className="text-2xl md:text-3xl font-semibold mb-2">
             Unlock your potential with American Express Consultant
           </h1>
           <p className="text-muted-foreground max-w-3xl">
@@ -41,7 +35,7 @@ const page = () => {
             immigration provider.
           </p>
         </div>
-        <div className="flex  gap-6 mt-5">
+        <div className="flex  gap-6  mb-4">
           {stats.map((item, index) => {
             return (
               <div className="flex flex-col" key={index}>
@@ -53,25 +47,29 @@ const page = () => {
             );
           })}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {testimonies.map((item, index) => {
             return (
               <Link href="#" key={index}>
-                <li className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
-                  <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
-                    {item.paragraph}
-                  </p>
-                  <div>
-                    <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
-                      {item.name}
-                    </h3>
-                    <p className="text-sm text-gray-600 delay-75 font-extrabold  icon-slide-in transition-transform duration-500 ease-in-out">
-                      {item.position}
-                    </p>
-                  </div>
-                </li>
+                <TestimonyCard item={item} />
               </Link>
             );
+          })}
+        </div>
+      </div>
+      <div className="mb-14">
+        <div className="mb-8">
+          <h1 className="text-2xl md:text-3xl font-semibold mb-2">
+            Our Offers
+          </h1>
+          <p className="text-muted-foreground max-w-3xl">
+            We have a 10%-20% discount for clients who make pay upfront without
+            instalment plans.{" "}
+          </p>
+        </div>
+        <div className="grid grid-cols-3 gap-5 ">
+          {offers.map((item, index) => {
+            return <OfferCard item={item} key={index} />;
           })}
         </div>
       </div>
@@ -102,5 +100,47 @@ const testimonies = [
       "Amazing people oriented consultancy. They helped me with applying to schools and choosing courses that best aligned with my dreams and aspirations ",
     position: "Education",
     img: "/#",
+  },
+];
+
+const offers = [
+  {
+    title: "Decisive ",
+    tagLine: "School Application fees included.",
+    // price: "$2000",
+    description:
+      "This plan includes our assistance in applying to two schools and programmes have has been already decided on by the client.  Suitable for students and workers who have already chosen their preferred schools and fields",
+    perks: [
+      " Statement of Purpose and CVs",
+      " Recommendation Letters and Application/ Personal Statement",
+      "Scholarship assistance is included on this package for clients who book on a 2 instalment payment plan / pay upfront.",
+    ],
+    actionBtnUrl: "#",
+  },
+  {
+    title: "School-Leaver",
+    tagLine: "School Application fees included.",
+    // price: "$3000",
+    description:
+      "This is the recommended plan for university and high school leavers. We help you in applying to three schools and programmes. Priority will be given to first class or second class upper university graduates and high school leavers with grades above C5.",
+    perks: [
+      " Statement of Purpose and CVs",
+      " Recommendation Letters and Application/ Personal Statement",
+      "Scholarship assistance is included on this package for clients who book on a 2 instalment payment plan / pay upfront.",
+    ],
+    actionBtnUrl: "#",
+  },
+  {
+    title: "Goal-Getter",
+    tagLine: "School Application fees included.",
+    // price: "$Comprehensive",
+    description:
+      "This is the   plan for anyone who wants to benefit from our variety services. It includes career guidance and training as well as application to six schools and programmes. We prioritise your goals and help you in achieving them.",
+    perks: [
+      " Statement of Purpose and CVs",
+      " Recommendation Letters and Application/ Personal Statement",
+      "Scholarship assistance is included on this package for clients who book on a 2 instalment payment plan / pay upfront.",
+    ],
+    actionBtnUrl: "#",
   },
 ];

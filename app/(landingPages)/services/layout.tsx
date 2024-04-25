@@ -16,7 +16,7 @@ export default function RootLayout({
       <div className=" w-fit   top-[120px] left-4 sticky border border-gray-200 py-3 px-2 rounded-[20px] flex gap-24 flex-col">
         <ServiceSidebar />
       </div>
-      <div className=" pl-14 top-[120px] bottom-0 left-[90px] w-[calc(100% - 90px)] h-full">
+      <div className=" pl-14 pr-4 top-[120px] bottom-0 left-[90px] w-[calc(100% - 90px)] h-full">
         {children}
       </div>
     </div>
