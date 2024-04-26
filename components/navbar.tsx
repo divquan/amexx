@@ -17,7 +17,7 @@ import Image from "next/image";
 const Navbar = () => {
   const pathname = usePathname().split("/")[1];
   return (
-    <nav className="fixed top-[15px] md:top-[20px] w-[98%] lg:w-10/12 max-w-6xl left-1/2 -translate-x-1/2 mx-auto backdrop-blur-md bg-[#FBFBFB] bg-opacity-50  border border-[rgba(0, 0, 0, 0.1)] z-20  rounded-[36px] p-2 md:p-4 flex justify-between items-center ">
+    <nav className="fixed top-[15px] md:top-[20px] w-[98%] lg:w-10/12 max-w-6xl left-1/2 -translate-x-1/2 mx-auto backdrop-blur-md bg-white bg-opacity-50  border border-[rgba(0, 0, 0, 0.1)] z-20  rounded-[36px] p-2 md:p-4 flex justify-between items-center ">
       <Image
         src={logo.src}
         height={logo.height}
