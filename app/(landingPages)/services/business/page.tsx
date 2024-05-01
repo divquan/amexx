@@ -18,7 +18,7 @@ const page = () => {
         <h1 className="text-2xl md:text-3xl font-semibold mb-2">
           Who Qualifies?
         </h1>
-        <div className="flex gap-4 flex-wrap mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           {WhoQualifiesName.map((item, index) => {
             return <WhoQualifiesCard name={item} key={index} />;
           })}
@@ -38,11 +38,11 @@ const page = () => {
               high as $5,000 in commissions monthly. We value our partners.
             </p>
           </div>
-          <div className="mb-8 bg-[#FBFBFB] rounded-xl p-4 pl-6 ">
+          <div className="mb-8 bg-[#FBFBFB] rounded-xl p-2 md:p-4  md:pl-6 ">
             <h4 className="text-2xl md:text-3xl font-semibold mb-6">
               Simple steps to follow{" "}
             </h4>
-            <div className="flex flex-col gap-4 relative pl-12">
+            <div className="flex flex-col gap-4 relative pl-5 md:pl-12">
               {SimpleStepsToFollow.map((item, index) => {
                 return (
                   <SimpleSteps
@@ -52,7 +52,7 @@ const page = () => {
                   />
                 );
               })}
-              <div className="absolute top-[90px] bottom-[90px] left-2 flex justify-between flex-col">
+              <div className="absolute top-[90px] bottom-[90px] left-0 md:left-2 flex justify-between flex-col">
                 {SimpleStepsToFollow.map((item, index) => {
                   return (
                     <React.Fragment key={index}>
@@ -88,7 +88,7 @@ export default page;
 
 const WhoQualifiesCard = ({ name }: { name: string }) => {
   return (
-    <div className="h-[125px] w-[144px] bg-[#FBFBFB]  flex flex-col justify-center items-center gap-1 rounded-lg">
+    <div className="h-[125px] w-full md:w-[144px] bg-[#FBFBFB]  flex flex-col justify-center items-center gap-1 rounded-lg">
       <div className="bg-white p-3 rounded-full">
         <Award />
       </div>
@@ -126,12 +126,12 @@ const SimpleStepsToFollow = [
 
 const SimpleSteps = ({ title, desc }: { title: string; desc: string }) => {
   return (
-    <div className="w-[300px] h-[201px] rounded-xl flex flex-col gap-3 items-start  bg-white p-6 border border-[rgba(0, 0, 0, 0.05)]    justify-between    ">
+    <div className=" w-full md:w-[300px] h-[201px] rounded-xl flex flex-col gap-3 items-start  bg-white p-2 md:p-6 border border-[rgba(0, 0, 0, 0.05)]    justify-between    ">
       <div>
         <Bookmark />
         <h3 className="font-bold">{title}</h3>
       </div>
-      <span>{desc}</span>
+      <span className="text-sm">{desc}</span>
     </div>
   );
 };

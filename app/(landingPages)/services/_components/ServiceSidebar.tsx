@@ -11,7 +11,7 @@ import Link from "next/link";
 const ServiceSidebar = () => {
   let timeout: any;
   const pathnames = usePathname().split("/").slice(1);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <div
       className=" flex gap-24 flex-col"
@@ -34,7 +34,6 @@ const ServiceSidebar = () => {
           const currentPath = !(pathnames.length < 2)
             ? "/" + pathnames[1]
             : "/";
-          // console.log();
           const isActive = currentPath == Item.link;
           const Icon = () =>
             Item?.icon ? (
@@ -58,7 +57,7 @@ const ServiceSidebar = () => {
               <BsQuestion className="h-6 w-6" />
             );
           return (
-            <Link href={"/services" + Item.link}>
+            <Link href={"/services" + Item.link} key={index}>
               <Button
                 className={` transition-all ease-in-out duration-300 rounded-full ${
                   open ? "p-4 w-full items-center justify-start " : "p-1 w-12"

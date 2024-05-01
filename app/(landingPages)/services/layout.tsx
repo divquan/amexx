@@ -13,10 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <div className="relative flex flex-row pt-32 min-h-screen items-start">
-      <div className=" w-fit   top-[120px] left-4 sticky border border-gray-200 py-3 px-2 rounded-[20px]">
+      <div className=" w-fit top-24 md:top-[120px] left-1 md:left-4 sticky border border-gray-200 py-3 px-2 rounded-[20px]">
         <ServiceSidebar />
       </div>
-      <div className=" pl-14 pr-4 top-[120px] bottom-0 left-[90px] w-[calc(100% - 90px)] h-full transition-all ease-in-out duration-700 max-w-6xl mx-auto">
+      <div className=" pl-3 md:pl-14 pr-3 top-[120px] bottom-0 left-[90px] w-[calc(100% - 90px)] h-full transition-all ease-in-out duration-700 max-w-6xl mx-auto">
         {children}
       </div>
     </div>

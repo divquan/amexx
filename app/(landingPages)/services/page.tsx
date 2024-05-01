@@ -11,9 +11,9 @@ import TestimonyCard from "./_components/testimonyCard";
 
 const page = () => {
   return (
-    <div className="min-h-screen flex flex-col gap-6">
-      <div className=" mb-14">
-        <div className="mb-8">
+    <div className="min-h-screen flex flex-col gap-3 md:gap-6">
+      <div className="mb-4 md:mb-14">
+        <div className="mb-2 md:mb-8">
           <h1 className="text-2xl md:text-3xl font-semibold mb-2">
             Land your dream job and relocate to Canada or US with us
           </h1>
@@ -24,7 +24,7 @@ const page = () => {
         <PartnerInstitutions />
       </div>
 
-      <div className="flex flex-col gap-5 mb-16">
+      <div className="flex flex-col gap-5 mb-8 md:mb-16">
         <div className="mb-4">
           <h1 className="text-2xl md:text-3xl font-semibold mb-2">
             Unlock your potential with American Express Consultant
@@ -35,7 +35,7 @@ const page = () => {
             immigration provider.
           </p>
         </div>
-        <div className="flex  gap-6  mb-4">
+        <div className="flex gap-3 md:gap-6  mb-4 flex-wrap">
           {stats.map((item, index) => {
             return (
               <div className="flex flex-col" key={index}>
@@ -47,7 +47,7 @@ const page = () => {
             );
           })}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
           {testimonies.map((item, index) => {
             return (
               <Link href="#" key={index}>
@@ -67,7 +67,7 @@ const page = () => {
             instalment plans.{" "}
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
           {offers.map((item, index) => {
             return <OfferCard item={item} key={index} />;
           })}

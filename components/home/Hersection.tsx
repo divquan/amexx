@@ -27,7 +27,6 @@ const Hersection = () => {
       </div>
       <div className="flex flex-row items-center gap-4 max-w-4xl">
         {images.map((item, index) => {
-          console.log(index == 0 || index == images.length - 1, index);
           return (
             <div
               key={"image-group" + index}
