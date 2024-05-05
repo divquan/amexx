@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/home/Footer";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AMEXT",
@@ -13,12 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <div>
-        <Navbar />
-      </div>
-      <div>{children}</div>
-      <Footer />
-    </>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
