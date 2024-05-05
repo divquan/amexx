@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { InlineWidget } from "react-calendly";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   return (
     <div>
@@ -23,4 +23,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
