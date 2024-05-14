@@ -116,7 +116,7 @@ const Form = () => {
           />
         </div>
         <Button className='mt-8' disabled={loading}>
-          <span>Log in</span>
+          <span>Sign up</span>
           {loading && <Loader2 className='animate-spin ' />}
         </Button>
       </div>
