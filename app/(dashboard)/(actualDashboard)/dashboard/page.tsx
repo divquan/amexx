@@ -2,54 +2,112 @@
 import { Button } from '@/components/ui/button';
 import { account } from '@/lib/appwrite';
 import { AppwriteException } from 'appwrite';
+import { LoaderCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+
 const Page = () => {
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState();
-
-  const router = useRouter();
-
-  useEffect(() => {
-    const fetch = async () => {
-      try {
-        console.log('fetching....');
-        const result = await account.get();
-        console.log('lll', result);
-      } catch (e: any) {
-        if (e.type === 'general_unauthorized_scope') {
-          console.error('Error getting user session: ', e.type);
-          toast.error(
-            'You are not authorized to view this page. Please login first'
-          );
-          router.push('/login?redirect=/dashboard&error=unauthorized');
-        }
-        toast.error('Something went wrong. Plese log in again. ', {
-          action: (
-            <Link href={'/login'}>
-              <Button>Login</Button>
-            </Link>
-          ),
-        });
-      }
-    };
-    fetch();
-  }, []);
   return (
-    <div className='flex items-center justify-center h-screen w-screen'>
-      <div className='border-2 border-black h-64 w-72  relative'>
-        <div className='h-10 w-10 rounded-full border border-black absolute top-0 left-1/2 -translate-x-1/2'></div>
-        <div className='h-10 w-10 rounded-full border border-black absolute bottom-0 right-0 '></div>
-        <div className='h-10 w-10 rounded-full border border-black absolute bottom-0 left-0 '></div>
-        <div className='h-5 w-64 border border-black rotate-45 translate-x-11'></div>
-        <div className='h-5 w-64 border border-black rotate-180 translate-y-54'></div>
-        <div className='h-5 w-64 border border-black rotate-45 translate-x-11'></div>
+    <div className='flex items-center justify-center p-3 md:p-4 '>
+      <div className='flex  min-h-screen flex-col w-full max-w-6xl gap-5 md:gap-8 '>
+        <header className='w-full flex justify-between items-center'>
+          <span className='text-2xl font-bold'>Welcome, Jake</span>
+          <Link href='/request-service'>
+            <Button variant={'default'}>Request New Service</Button>
+          </Link>
+        </header>
+        <div>
+          <div>
+            <div>
+              <Table>
+                <TableCaption>A list of your recent invoices.</TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className='font-bold'>Service name</TableHead>
+                    <TableHead className='font-bold'>Date</TableHead>
+                    <TableHead className='font-bold'>Status</TableHead>
+                    <TableHead className='font-bold'>
+                      Assigned consultant
+                    </TableHead>
+                    <TableHead className='font-bold text-right'>
+                      Actions
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className='font-medium'>INV001</TableCell>
+                    <TableCell>Paid</TableCell>
+                    <TableCell>Credit Card</TableCell>
+                    <TableCell className='text-right'>$250.00</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Page;
+
+const Titles = ['', 'Date', 'Status', 'Assigned consultant', 'Actions'];
+
+const Items = [
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+  {
+    name: 'Basic Education Package',
+    date: 'February 5, 2024',
+    status: 'Request Sent',
+    consultant: 'John Doe',
+  },
+];
