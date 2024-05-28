@@ -1,9 +1,38 @@
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Briefcase, Teacher } from "iconsax-react";
+import React from "react";
+import { formData } from "./formData";
 
 const page = () => {
   return (
-    <div>
-      <ProgressComponent />
+    <div className="w-full flex px-3 md:px-[8%] flex-col md:flex-row gap-5">
+      {/* <ProgressComponent /> */}
+      <div className="max-w-[516px] w-full flex flex-col gap-12">
+        {formData.map((item, index) => (
+          <div className="flex gap-3 flex-col" key={index}>
+            <span>{item.title}</span>
+            {item.items.map((radioItem, radioIndex) => {
+              return (
+                <CustomRadioButton
+                  key={radioIndex + "radio" + index}
+                  description={radioItem.description}
+                  isSchool={radioItem.isSchool}
+                  title={radioItem.title}
+                  value={radioItem.value}
+                  groupKey={item.groupKey}
+                />
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      <div className="max-w-sm border shadow-lg p-3 border-gray-300 rounded-[16px] flex flex-col h-fit gap-3">
+        <p>Click to proceed once you are done fillling the necessary forms</p>
+        <div className="flex flex-col">
+          <Button>Proceed</Button>
+          <Button variant="outline">Cancel</Button>
+        </div>
+      </div>
     </div>
   );
 };
@@ -13,17 +42,53 @@ export default page;
 const ProgressComponent = () => {
   const progressItems = [
     {
-      name: 'General',
-      pathname: 'general',
+      name: "General",
+      pathname: "general",
     },
     {
-      name: 'Education Goals',
-      pathname: 'education-goals',
+      name: "Education Goals",
+      pathname: "education-goals",
     },
     {
-      name: 'General',
-      pathname: 'general',
+      name: "General",
+      pathname: "general",
     },
   ];
   return <div></div>;
+};
+
+const CustomRadioButton = (props: {
+  isSchool: boolean;
+  title: string;
+  description: string;
+  value: string;
+  groupKey: string;
+}) => {
+  const { isSchool, description, groupKey, title, value } = props;
+  return (
+    <label
+      className="flex gap-2 justify-between w-full border border-gray-300 rounded-[16px] p-4"
+      htmlFor={value}
+    >
+      <div className="flex flex-col gap-2">
+        <div className="flex gap-4 items-center">
+          <Button
+            variant={isSchool ? "default" : "secondary"}
+            className={`h-10 w-10 rounded-full p-0`}
+          >
+            {isSchool ? (
+              <Teacher size={24} variant="Bold" />
+            ) : (
+              <Briefcase size={24} />
+            )}
+          </Button>
+          <h2>{title}</h2>
+        </div>
+        <div>
+          <p className="opacity-60">{description}</p>
+        </div>
+      </div>
+      <input type="radio" name={groupKey} value={value} id={value} />
+    </label>
+  );
 };
