@@ -9,10 +9,12 @@ const Navbar = () => {
       <div className='max-w-6xl flex justify-between w-full items-center'>
         <div>Logo</div>
         <div className=' flex gap-1'>
-          <Button variant={'ghost'} className=' rounded-full h-12 w-12 p-0'>
+          <Button
+            variant={'ghost'}
+            className=' rounded-full h-12 w-12 p-0 hidden md:block'>
             <Sms size={22} />
           </Button>
-          <Link href='/dashbaord/notifications'>
+          <Link href='/dashbaord/notifications' className='hidden md:block'>
             <Button variant={'ghost'} className=' rounded-full h-12 w-12 p-0'>
               <Notification size={22} />
             </Button>
