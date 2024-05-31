@@ -6,15 +6,19 @@ import { Button } from '@/components/ui/button';
 import Input from '@/components/dashboard/input';
 
 type detailType = {
+  degreeType: string;
   areaOfStudy: string;
-  desiredSchoolAndProgram: string;
-  anythingElse: string;
+  university: string;
+  gpa: string;
+  certification: string;
 };
 const Page = () => {
   const [details, setDetails] = useState<detailType>({
+    degreeType: '',
     areaOfStudy: '',
-    desiredSchoolAndProgram: '',
-    anythingElse: '',
+    university: '',
+    gpa: '',
+    certification: '',
   });
 
   const handleChange = (name: keyof detailType, value: string) => {
@@ -29,7 +33,15 @@ const Page = () => {
           <div className='flex flex-col gap-6'>
             <h1>Tell us more about your current educational goals</h1>
             <div>
-              <label className='text-gray-700'>Area of Study</label>
+              <label className='text-gray-700'>Degree Type</label>
+              <Input
+                placeholder='Degree Type'
+                value={details.degreeType}
+                onChange={(e) => handleChange('degreeType', e.target.value)}
+              />
+            </div>
+            <div>
+              <label className='text-gray-700'>Area of Study </label>
               <Input
                 placeholder='Area of Study'
                 value={details.areaOfStudy}
@@ -37,25 +49,29 @@ const Page = () => {
               />
             </div>
             <div>
-              <label className='text-gray-700'>
-                Desired Programs & Schools
-              </label>
+              <label className='text-gray-700'>University </label>
               <Input
-                placeholder='Desired Programs & Schools'
-                value={details.desiredSchoolAndProgram}
-                onChange={(e) =>
-                  handleChange('desiredSchoolAndProgram', e.target.value)
-                }
+                placeholder='University'
+                value={details.university}
+                onChange={(e) => handleChange('university', e.target.value)}
               />
             </div>
             <div>
+              <label className='text-gray-700'>GPA or Academic Standing </label>
+              <Input
+                placeholder='GPA or Academic Standing'
+                value={details.gpa}
+                onChange={(e) => handleChange('gpa', e.target.value)}
+              />
+            </div>{' '}
+            <div>
               <label className='text-gray-700'>
-                Anything else we should know about your goals?
+                Certifications & Other Degrees{' '}
               </label>
               <Input
-                placeholder='Desired Programs & Schools'
-                value={details.anythingElse}
-                onChange={(e) => handleChange('anythingElse', e.target.value)}
+                placeholder='Certifications & Other Degrees'
+                value={details.certification}
+                onChange={(e) => handleChange('certification', e.target.value)}
               />
             </div>
           </div>
