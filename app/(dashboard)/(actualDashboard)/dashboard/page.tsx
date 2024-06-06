@@ -1,12 +1,12 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { account } from '@/lib/appwrite';
-import { AppwriteException } from 'appwrite';
-import { LoaderCircle } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { toast } from 'sonner';
+"use client";
+import { Button } from "@/components/ui/button";
+import { account } from "@/lib/appwrite";
+import { AppwriteException } from "appwrite";
+import { LoaderCircle } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 import {
   Table,
@@ -16,16 +16,17 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
+} from "@/components/ui/table";
+import { Eye, Trash } from "iconsax-react";
 
 const Page = () => {
   return (
-    <div className='flex items-center justify-center p-3 md:p-4 '>
-      <div className='flex  min-h-screen flex-col w-full max-w-6xl gap-5 md:gap-8 '>
-        <header className='w-full flex justify-between items-center'>
-          <span className='text-2xl font-bold'>Welcome, Jake</span>
-          <Link href='/request-service'>
-            <Button variant={'default'}>Request New Service</Button>
+    <div className="flex items-center justify-center p-3 md:p-4 pt-8 ">
+      <div className="flex  min-h-screen flex-col w-full max-w-6xl gap-5 md:gap-8 ">
+        <header className="w-full flex justify-between items-center">
+          <span className="text-2xl font-bold">Welcome, Jake</span>
+          <Link href="/request-service">
+            <Button variant={"default"}>Request New Service</Button>
           </Link>
         </header>
         <div>
@@ -35,24 +36,25 @@ const Page = () => {
                 <TableCaption>A list of your recent invoices.</TableCaption>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className='font-bold'>Service name</TableHead>
-                    <TableHead className='font-bold'>Date</TableHead>
-                    <TableHead className='font-bold'>Status</TableHead>
-                    <TableHead className='font-bold'>
+                    <TableHead className="font-bold">Service name</TableHead>
+                    <TableHead className="font-bold">Date</TableHead>
+                    <TableHead className="font-bold">Status</TableHead>
+                    <TableHead className="font-bold">
                       Assigned consultant
                     </TableHead>
-                    <TableHead className='font-bold text-right'>
+                    <TableHead className="font-bold text-right">
                       Actions
                     </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow>
-                    <TableCell className='font-medium'>INV001</TableCell>
-                    <TableCell>Paid</TableCell>
-                    <TableCell>Credit Card</TableCell>
-                    <TableCell className='text-right'>$250.00</TableCell>
-                  </TableRow>
+                  {Items.map((item, index) => {
+                    return (
+                      <>
+                        <RequestedServicesItem item={item} key={index} />
+                      </>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </div>
@@ -65,49 +67,79 @@ const Page = () => {
 
 export default Page;
 
-const Titles = ['', 'Date', 'Status', 'Assigned consultant', 'Actions'];
+const Titles = [
+  "Service name",
+  "Date",
+  "Status",
+  "Assigned consultant",
+  "Actions",
+];
 
 const Items = [
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
   {
-    name: 'Basic Education Package',
-    date: 'February 5, 2024',
-    status: 'Request Sent',
-    consultant: 'John Doe',
+    name: "Basic Education Package",
+    date: "February 5, 2024",
+    status: "Request Sent",
+    consultant: "John Doe",
   },
 ];
+
+const RequestedServicesItem = ({
+  item,
+}: {
+  item: {
+    name: string;
+    date: string;
+    status: string;
+    consultant: string;
+  };
+}) => {
+  return (
+    <TableRow>
+      <TableCell className="font-medium">{item.name}</TableCell>
+      <TableCell>{item.date}</TableCell>
+      <TableCell>{item.status}</TableCell>
+      <TableCell className="text-center">{item.consultant}</TableCell>
+      <TableCell className="flex gap-2 justify-end">
+        <Trash size="24" color="black" />
+        <Eye size="24" color="black" />
+      </TableCell>
+    </TableRow>
+  );
+};

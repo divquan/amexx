@@ -2,8 +2,11 @@
 const MessageArea = () => {
   return (
     <div className=" flex-1 h-full overflow-y-scroll">
+      <div className="text-sm font-bold text-gray-600 text-center my-3">
+        Messages starts here
+      </div>
       {chatMessages.map((item, index) => {
-        return <MessageCard item={item} />;
+        return <MessageCard item={item} key={index} />;
       })}
     </div>
   );

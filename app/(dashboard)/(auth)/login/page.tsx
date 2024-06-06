@@ -89,10 +89,12 @@ const Page = () => {
               className="w-full border border-gray-300 rounded-xl h-10 md:h-12 px-3 focus:outline outline-gray-500"
             />
           </div>
-          <Button className="mt-8" disabled={loading}>
-            <span>Log in</span>
-            {loading && <Loader2 className="animate-spin " />}
-          </Button>
+          <Link href={"/dashboard"}>
+            <Button className="mt-8 w-full" disabled={loading} type="button">
+              <span>Log in</span>
+              {loading && <Loader2 className="animate-spin " />}
+            </Button>
+          </Link>
         </div>
       </form>
     </div>
