@@ -8,14 +8,23 @@ import { validateKeys } from "@/lib/utils";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { SignUpFormValues } from "./types";
+import {
+  addUserDataToDB,
+  createAccount,
+  createSession,
+  sendVerificationEmail,
+} from "./actions";
 
-const Form = () => {
-  const [userInput, setUserInput] = useState({
+const Form = ({ serverDate }: { serverDate: string }) => {
+  const [userInput, setUserInput] = useState<SignUpFormValues>({
     firstName: "",
     lastName: "",
     email: "",
     password: "",
+    phoneNumber: "",
   });
+
   const [loading, setLoading] = useState(false);
 
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,26 +39,26 @@ const Form = () => {
     }
 
     try {
-      const createAccountRes = await account.create(
-        ID.unique(),
-        userInput.email,
-        userInput.password,
-        userInput.firstName + " " + userInput.lastName
-      );
-      console.log("CreateAccountRes: ", createAccountRes);
-
-      //creating session
-      const session = await account.createEmailPasswordSession(
+      const uuid = ID.unique();
+      //creating user
+      const createrRes = await createAccount(uuid, userInput);
+      console.log("createRes; ", createrRes);
+      //create session
+      const sessionRes = await createSession(
         userInput.email,
         userInput.password
       );
-      console.log("Session: ", session);
-
-      //sending email verification
-      const emailVerifyRes = await account.createVerification(
-        "http://localhost:3000/verify"
+      console.log("sessionres", sessionRes);
+      //create userData in DB
+      const addtodbres = await addUserDataToDB(
+        uuid,
+        userInput.phoneNumber,
+        serverDate
       );
-      console.log("EmailVerifyRes: ", emailVerifyRes);
+      console.log("addres", addtodbres);
+      //sending email verification
+      await sendVerificationEmail(userInput.email, userInput.password);
+      console.log();
     } catch (error: any) {
       console.error("Error: ", error.message);
       toast.error(error.message);
@@ -116,13 +125,11 @@ const Form = () => {
             className="w-full border border-gray-300 rounded-xl h-10 md:h-12 px-3 focus:outline outline-gray-500"
           />
         </div>
-        <Link href={"/login"} className="w-full">
-          <Button className="mt-8 py-5 w-full" disabled={loading} type="button">
-            {/* <Button className="mt-8 py-5 w-full"> */}
-            <span>Sign up</span>
-            {loading && <Loader2 className="animate-spin " />}
-          </Button>
-        </Link>
+        <Button className="mt-8 py-5 w-full" disabled={loading}>
+          {/* <Button className="mt-8 py-5 w-full"> */}
+          <span>Sign up</span>
+          {loading && <Loader2 className="animate-spin " />}
+        </Button>
       </div>
     </form>
   );
