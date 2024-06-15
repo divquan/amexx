@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/useAuth";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();
 
   console.log(user);
@@ -24,4 +24,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return <div> {children}</div>;
 };
 
-export default layout;
+export default Layout;
