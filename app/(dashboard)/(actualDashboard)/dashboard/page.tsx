@@ -1,12 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { account } from "@/lib/appwrite";
-import { AppwriteException } from "appwrite";
-import { LoaderCircle } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { toast } from "sonner";
+import React from "react";
 
 import {
   Table,

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { validateKeys } from "@/lib/utils";
 import { toast } from "sonner";
-import { account } from "@/lib/appwrite";
+
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 const Page = () => {
@@ -29,12 +29,7 @@ const Page = () => {
         setLoading(false);
         return;
       }
-      const response = await account.createEmailPasswordSession(
-        userInput.email,
-        userInput.password
-      );
 
-      console.log(response); // Success
       setLoading(false);
       toast.success("Successfully logged in", {
         style: { backgroundColor: "green", color: "GrayText" },

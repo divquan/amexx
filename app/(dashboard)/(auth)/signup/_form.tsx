@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-import { account } from "@/lib/appwrite";
-import { ID, Models } from "appwrite";
 import { Loader2 } from "lucide-react";
 import { validateKeys } from "@/lib/utils";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { signup } from "./actionss";
+import { signup } from "./actions";
 
 const Form = () => {
   const [userInput, setUserInput] = useState({
