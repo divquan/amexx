@@ -33,7 +33,7 @@ const Page = () => {
           <div>
             <div>
               <Table>
-                <TableCaption>A list of your recent invoices.</TableCaption>
+                <TableCaption>A list of your service requests.</TableCaption>
                 <TableHeader>
                   <TableRow>
                     <TableHead className="font-bold">Service name</TableHead>
@@ -49,11 +49,7 @@ const Page = () => {
                 </TableHeader>
                 <TableBody>
                   {Items.map((item, index) => {
-                    return (
-                      <>
-                        <RequestedServicesItem item={item} key={index} />
-                      </>
-                    );
+                    return <RequestedServicesItem item={item} key={index} />;
                   })}
                 </TableBody>
               </Table>
