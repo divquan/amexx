@@ -9,6 +9,7 @@ import { toast } from "sonner";
 
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { signInUser } from "./actions";
 const Page = () => {
   const [userInput, setUserInput] = useState({
     email: "",
@@ -29,12 +30,12 @@ const Page = () => {
         setLoading(false);
         return;
       }
-
+      await signInUser(userInput.email, userInput.password);
       setLoading(false);
       toast.success("Successfully logged in", {
         style: { backgroundColor: "green", color: "GrayText" },
       });
-      router.push("/dashboard");
+      // router.push("/dashboard");
     } catch (error: any) {
       console.log(error); // Failure
       setLoading(false);
@@ -84,12 +85,10 @@ const Page = () => {
               className="w-full border border-gray-300 rounded-xl h-10 md:h-12 px-3 focus:outline outline-gray-500"
             />
           </div>
-          <Link href={"/dashboard"}>
-            <Button className="mt-8 w-full" disabled={loading} type="button">
-              <span>Log in</span>
-              {loading && <Loader2 className="animate-spin " />}
-            </Button>
-          </Link>
+          <Button className="mt-8 w-full" disabled={loading}>
+            <span>Log in</span>
+            {loading && <Loader2 className="animate-spin " />}
+          </Button>
         </div>
       </form>
     </div>
