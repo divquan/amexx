@@ -35,7 +35,7 @@ const Page = () => {
       toast.success("Successfully logged in", {
         style: { backgroundColor: "green", color: "GrayText" },
       });
-      // router.push("/dashboard");
+      router.push("/dashboard");
     } catch (error: any) {
       console.log(error); // Failure
       setLoading(false);

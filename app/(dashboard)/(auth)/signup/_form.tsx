@@ -6,6 +6,7 @@ import { validateKeys } from "@/lib/utils";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { signup } from "./actions";
+import { useRouter } from "next/navigation";
 
 const Form = () => {
   const [userInput, setUserInput] = useState({
@@ -17,7 +18,7 @@ const Form = () => {
   });
 
   const [loading, setLoading] = useState(false);
-
+  const router = useRouter();
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -47,6 +48,7 @@ const Form = () => {
       toast.success("Successfully signed up", {
         className: "bg-green-200 text-green-800",
       });
+      router.push("/login");
     } catch (error: any) {
       console.error("Error: ", error.message);
       toast.error(error.message);
