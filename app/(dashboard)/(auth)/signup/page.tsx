@@ -5,9 +5,6 @@ import { Button } from "@/components/ui/button";
 import Form from "./_form";
 
 const Page = async () => {
-  const date = new Date();
-  const isoString = date.toISOString(); // "2023-06-07T14:48:00.000Z"
-
   return (
     <>
       <div>
@@ -19,7 +16,7 @@ const Page = async () => {
             <Button variant={"secondary"}>Log In</Button>
           </Link>
         </div>
-        <Form serverDate={isoString} />
+        <Form />
       </div>
     </>
   );
