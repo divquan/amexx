@@ -7,6 +7,7 @@ import { Loader2 } from 'lucide-react';
 import { validateKeys } from '@/lib/utils';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
+import { signup } from './actionss';
 
 const Form = () => {
   const [userInput, setUserInput] = useState({
@@ -27,28 +28,20 @@ const Form = () => {
       setLoading(false);
       return;
     }
-
     try {
-      const createAccountRes = await account.create(
-        ID.unique(),
-        userInput.email,
-        userInput.password,
-        userInput.firstName + ' ' + userInput.lastName
-      );
-      console.log('CreateAccountRes: ', createAccountRes);
-
-      //creating session
-      const session = await account.createEmailPasswordSession(
+      const { message, status } = await signup(
         userInput.email,
         userInput.password
       );
-      console.log('Session: ', session);
-
-      //sending email verification
-      const emailVerifyRes = await account.createVerification(
-        'http://localhost:3000/verify'
-      );
-      console.log('EmailVerifyRes: ', emailVerifyRes);
+      if (status === 'error') {
+        toast.error(message, {
+          className: 'bg-red-200 text-red-800',
+        });
+        return;
+      }
+      toast.success('Successfully signed up', {
+        style: { backgroundColor: 'green', color: 'GrayText' },
+      });
     } catch (error: any) {
       console.error('Error: ', error.message);
       toast.error(error.message);
