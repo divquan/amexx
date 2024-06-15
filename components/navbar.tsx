@@ -38,9 +38,14 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <Button variant={"secondary"} className="rounded-[24px] hidden md:block">
-        Free Consultation
-      </Button>
+      <Link href={"/signup"}>
+        <Button
+          variant={"secondary"}
+          className="rounded-[24px] hidden md:block"
+        >
+          Free Consultation
+        </Button>
+      </Link>
       <Sheet>
         <SheetTrigger asChild>
           <Button className="md:hidden">

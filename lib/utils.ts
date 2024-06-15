@@ -18,3 +18,9 @@ export function validateKeys(obj: any) {
 
   return invalidKeys;
 }
+
+
+export type ErrorObject = {
+  type:'error'|'success'|'warning',
+  message:string
+}

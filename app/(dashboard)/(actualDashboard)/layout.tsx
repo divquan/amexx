@@ -9,10 +9,10 @@ import { LoaderCircle } from "lucide-react";
 import Navbar from "@/components/dashboard/navbar";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState();
+  // const [loading, setLoading] = useState(false);
+  // const [user, setUser] = useState();
 
-  const router = useRouter();
+  // const router = useRouter();
 
   // useEffect(() => {
   //   const fetch = async () => {
@@ -42,12 +42,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   //   };
   //   fetch();
   // }, []);
-  if (loading)
-    return (
-      <div className="bg-gray-300 h-screen w-screen grid place-content-center ">
-        <LoaderCircle className="text-black animate-spin" />
-      </div>
-    );
+  // if (loading)
+  //   return (
+  //     <div className="bg-gray-300 h-screen w-screen grid place-content-center ">
+  //       <LoaderCircle className="text-black animate-spin" />
+  //     </div>
+  //   );
   return (
     <main>
       <Navbar />

@@ -16,6 +16,7 @@ const Form = () => {
     email: '',
     password: '',
   });
+
   const [loading, setLoading] = useState(false);
 
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -108,7 +109,8 @@ const Form = () => {
             className='w-full border border-gray-300 rounded-xl h-10 md:h-12 px-3 focus:outline outline-gray-500'
           />
         </div>
-        <Button className='mt-8' disabled={loading}>
+        <Button className='mt-8 py-5 w-full' disabled={loading}>
+          {/* <Button className="mt-8 py-5 w-full"> */}
           <span>Sign up</span>
           {loading && <Loader2 className='animate-spin ' />}
         </Button>
