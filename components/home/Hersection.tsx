@@ -14,13 +14,14 @@ const Hersection = () => {
     <div className="flex flex-col max-w-5xl text-center pt-8 md:pt-14 gap-12 md:gap-24 px-2 md:px-0">
       <div className="flex flex-col gap-6 items-center">
         <h1 className="text-3xl md:text-5xl font-bold">
-          Your<span className="text-primary"> Trusted </span>
-          Consultancy for Guidance
-          <br /> on <span className="text-secondary"> Traveling Abroad</span>
+          from getting{" "}
+          <span className="text-primary"> admissions {"--> "}</span>
+          visa processes, we guide you on travel on{" "}
+          <span className="text-secondary"> abroad</span>
         </h1>
-        <p className="max-w-3xl ">
-          AmericanExpress Travel Consult (AMEXT) gears you up to unleash your
-          capabilities, whether it&#39;s embarking on educational journeys,
+        <p className="max-w-3xl text-gray-500">
+          AmericanExpress Travel Consult <b>(AMEXT)</b> gears you up to unleash
+          your capabilities, whether it&#39;s embarking on educational journeys,
           enrolling in schools abroad, or securing employment opportunities.
         </p>
         <Button className="w-fit py-4 px-7">Learn about our process</Button>
