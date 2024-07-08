@@ -9,9 +9,10 @@ import image5 from "@/public/images/5.png";
 import image6 from "@/public/images/6.png";
 import image7 from "@/public/images/7.png";
 import Image from "next/image";
+
 const Hersection = () => {
   return (
-    <div className="flex flex-col max-w-5xl text-center pt-8 md:pt-14 gap-12 md:gap-24 px-2 md:px-0">
+    <div className="flex flex-col max-w-5xl text-center pt-8 md:pt-14 gap-12 md:gap-24 px-2 md:px-0 items-center">
       <div className="flex flex-col gap-6 items-center">
         <h1 className="text-3xl md:text-5xl font-bold">
           from getting{" "}

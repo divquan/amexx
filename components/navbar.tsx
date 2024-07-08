@@ -38,7 +38,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <Link href={"/signup"}>
+      <Link href={"/free-consultation"}>
         <Button
           variant={"secondary"}
           className="rounded-[24px] hidden md:block"
