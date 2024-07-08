@@ -1,7 +1,7 @@
 "use client";
 import { Session, User } from "@supabase/supabase-js";
 import { createContext, useState, useEffect, useContext } from "react";
-import { supabase } from "./superbase";
+import { supabase } from "../lib/superbase";
 import FullPageLoading from "@/components/FullPageLoading";
 
 const AuthContext = createContext<{ user: User | null; signOut?: () => void }>({

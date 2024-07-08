@@ -3,7 +3,7 @@ import React from "react";
 import { supabase } from "@/lib/superbase";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/lib/useAuth";
+import { useAuth } from "@/hooks/useAuth";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { user } = useAuth();

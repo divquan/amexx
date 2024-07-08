@@ -17,7 +17,7 @@ import { Eye, Trash } from "iconsax-react";
 
 const Page = () => {
   return (
-    <div className="flex items-center justify-center p-3 md:p-4 pt-8 ">
+    <div className="flex items-center justify-center p-3 md:p-4 pt-8  mt-4">
       <div className="flex  min-h-screen flex-col w-full max-w-6xl gap-5 md:gap-8 ">
         <header className="w-full flex justify-between items-center">
           <span className="text-2xl font-bold">Welcome, Jake</span>
