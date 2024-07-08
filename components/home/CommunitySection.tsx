@@ -13,9 +13,10 @@ const CommunitySection = ({
   text: string;
   buttonName?: string;
 }) => {
+  const { blurDataURL, blurHeight, blurWidth, ...other } = image;
   return (
     <div className="relative h-[500px] w-full">
-      <Image alt="" className="object-cover h-full w-full" {...image}></Image>
+      <Image alt="" className="object-cover h-full w-full" {...other}></Image>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col  items-center gap-6 w-full">
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-center ">
           {title}
