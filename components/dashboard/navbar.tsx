@@ -71,6 +71,7 @@ const Navbar = () => {
                     <Button
                       className="rounded-none text-left justify-start"
                       variant={"ghost"}
+                      key={index}
                     >
                       {item.name}
                     </Button>
