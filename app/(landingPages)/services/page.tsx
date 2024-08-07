@@ -79,6 +79,8 @@ const page = () => {
 
 export default page;
 import pp2 from "@/public/images/pp2.jpeg";
+import pp3 from "@/public/images/pp3.jpeg";
+import pp4 from "@/public/images/pp4.jpeg";
 
 const testimonies = [
   {
@@ -89,18 +91,18 @@ const testimonies = [
     img: pp2,
   },
   {
-    name: "Sally Acquah",
+    name: "David Gyasi",
     paragraph:
       "Applying for a masters degree was very stressful for me because i was also working a full time job. But they made the application less tedious and made suitable schedules for me.",
     position: "Education",
-    img: pp2,
+    img: pp3,
   },
   {
-    name: "Sally Acquah",
+    name: "Paa Kofi Kenneth",
     paragraph:
       "Amazing people oriented consultancy. They helped me with applying to schools and choosing courses that best aligned with my dreams and aspirations ",
     position: "Education",
-    img: pp2,
+    img: pp4,
   },
 ];
 

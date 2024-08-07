@@ -36,32 +36,33 @@ const SuccessStory = () => {
       <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 h-70 gap-2">
         {succesStories.map((item, index) => {
           return (
-            <Link href="#" key={index}>
-              <li className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
-                <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
-                  {item.text}
+            <li
+              key={index}
+              className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate "
+            >
+              <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
+                {item.text}
+              </p>
+              <div>
+                <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 delay-75 font-extrabold  icon-slide-in transition-transform duration-500 ease-in-out">
+                  {item.position}
                 </p>
-                <div>
-                  <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 delay-75 font-extrabold  icon-slide-in transition-transform duration-500 ease-in-out">
-                    {item.position}
-                  </p>
-                </div>
-              </li>
-            </Link>
+              </div>
+            </li>
           );
         })}
       </ul>
-      <div className="flex flex-col gap-8 items-center">
+      {/* <div className="flex flex-col gap-8 items-center">
         <h3 className="font-bold text-lg">
           Explore Amazing Stories From Our Client
         </h3>
         <Button variant={"secondary"} className="w-fit">
           Read Success Stories
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

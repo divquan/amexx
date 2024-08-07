@@ -92,13 +92,15 @@ const ServiceSidebar = () => {
               </p>
             </div>
           )}
-          <Button
-            variant={"secondary"}
-            className={`rounded-full p-0 h-12 ${open ? "w-full" : "w-12"}`}
-          >
-            <BiMailSend className={open ? "hidden" : ""} />
-            <span className={open ? "" : "hidden"}>Contact Us</span>
-          </Button>
+          <Link href={"mailto:info@amextconsult.com"}>
+            <Button
+              variant={"secondary"}
+              className={`rounded-full p-0 h-12 ${open ? "w-full" : "w-12"}`}
+            >
+              <BiMailSend className={open ? "hidden" : ""} />
+              <span className={open ? "" : "hidden"}>Contact Us</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ const Footer = () => {
               <Link href={"tel:0208922844"}> 020-892-2844</Link>
               <Link href={"tel:0551692961"}> 055-169-2961 </Link>
               <Link href={"tel:+15406172840"}> +15406172840</Link>
-              <Link href={"email:info@amextconsult.com"}>
+              <Link href={"mailto:info@amextconsult.com"}>
                 info@amextconsult.com
               </Link>
             </div>

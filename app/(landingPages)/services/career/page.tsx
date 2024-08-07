@@ -69,7 +69,7 @@ const page = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
           {offers.map((item, index) => {
-            return <OfferCard item={item} key={index} />;
+            return <OfferCard item={{ ...item, perks: [] }} key={index} />;
           })}
         </div>
       </div>
@@ -79,27 +79,29 @@ const page = () => {
 
 export default page;
 import pp1 from "@/public/images/pp1.jpeg";
+import pp5 from "@/public/images/pp5.jpeg";
+import pp6 from "@/public/images/pp6.jpeg";
 const testimonies = [
   {
-    name: "Sally Acquah",
+    name: "David Gyasi",
     paragraph:
       "I secured my dream job in the US with the help of American Express Consult. I was guided in creating a LinkedIn profile which gave me increased visibility and increased my chances of landing a job.",
     position: "Career",
     img: pp1,
   },
   {
-    name: "Sally Acquah",
+    name: "Titi Shukurah",
     paragraph:
       "As a fresh graduate with no work experience, I had no idea where to start from and all the jobs i saw required a minimum of two experience. This made me stranded until I heard of American Express consult. They helped me to put together a convincing resume with my activities in school. ",
     position: "Career",
-    img: pp1,
+    img: pp5,
   },
   {
-    name: "Sally Acquah",
+    name: "Paa Kofi Kenneth",
     paragraph:
       "What I like about their service is their understanding and the value they place on what you want. They gave consideration the the kind of job i wanted and the salary I expected.",
     position: "Career",
-    img: pp1,
+    img: pp6,
   },
 ];
 
