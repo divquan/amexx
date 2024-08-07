@@ -16,13 +16,15 @@ const SuccessStory = () => {
         <div className="flex flex-wrap gap-3 mt-3">
           {partnerImages.map((item, index) => {
             return (
-              <div className="w-[30%] md:w-1/4 h-14 md:h-24 overflow-hidden flex items-center justify-center">
+              <div
+                className="w-[30%] md:w-1/4 h-14 md:h-24 overflow-hidden flex items-center justify-center"
+                key={index}
+              >
                 <Image
                   src={item.src}
                   width={item.height}
                   height={item.height}
                   alt="dfs"
-                  key={index}
                   blurDataURL={item.blurDataURL}
                   className="object-cover  "
                 />
