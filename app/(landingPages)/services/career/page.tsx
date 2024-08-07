@@ -78,28 +78,28 @@ const page = () => {
 };
 
 export default page;
-
+import pp1 from "@/public/images/pp1.jpeg";
 const testimonies = [
   {
     name: "Sally Acquah",
     paragraph:
       "I secured my dream job in the US with the help of American Express Consult. I was guided in creating a LinkedIn profile which gave me increased visibility and increased my chances of landing a job.",
     position: "Career",
-    img: "/#",
+    img: pp1,
   },
   {
     name: "Sally Acquah",
     paragraph:
       "As a fresh graduate with no work experience, I had no idea where to start from and all the jobs i saw required a minimum of two experience. This made me stranded until I heard of American Express consult. They helped me to put together a convincing resume with my activities in school. ",
     position: "Career",
-    img: "/#",
+    img: pp1,
   },
   {
     name: "Sally Acquah",
     paragraph:
       "What I like about their service is their understanding and the value they place on what you want. They gave consideration the the kind of job i wanted and the salary I expected.",
     position: "Career",
-    img: "/#",
+    img: pp1,
   },
 ];
 
@@ -107,7 +107,7 @@ const offers = [
   {
     title: "Beginner ",
     // tagLine: "School Application fees included.",
-    price: "$452/month",
+
     description:
       "We have designed this package for people who want to explore their career options with their diverse backgrounds and skill sets. We help you in applying for thirty different jobs in your preferred industry and give you an intensive coaching for interviews. Included in this package are",
     perks: [
@@ -120,7 +120,7 @@ const offers = [
   {
     title: "Professional",
     // tagLine: "School Application fees included.",
-    price: "$452/month",
+
     description:
       "Professionals with working experience are not left out. We will help you work in the same or similar field abroad. You will get assistance  assistances in organising your CV to improve your chances of getting a call for interview. We also give you the opportunity to negotiate your salary and working conditions. It includes",
     perks: [
@@ -133,7 +133,7 @@ const offers = [
   {
     title: "Career Guidance",
     // tagLine: "School Application fees included.",
-    price: "$452/month",
+
     description:
       "Do you need help in choosing a career path? American Express Consult has got you in mind as well.      Our Career Guidance experts with help you identify your strengths and weaknesses and help you navigate the path that is best for you and your future.   We will go through a step by step training approach with you and monitor your growth. At the end of your training session, we will help you find a perfect job and take you a step closer to a successful future.",
     perks: [],

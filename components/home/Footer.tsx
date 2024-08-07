@@ -30,8 +30,12 @@ const Footer = () => {
               className="w-44 h-auto"
             />{" "}
             <div className="flex flex-col gap-2">
-              <Link href={"tel:+1 (7635) 547-12-97"}>+1 (7635) 547-12-97</Link>
-              <span>support@amex.com</span>
+              <Link href={"tel:0208922844"}> 020-892-2844</Link>
+              <Link href={"tel:0551692961"}> 055-169-2961 </Link>
+              <Link href={"tel:+15406172840"}> +15406172840</Link>
+              <Link href={"email:info@amextconsult.com"}>
+                info@amextconsult.com
+              </Link>
             </div>
           </div>
           <div className="flex gap-12 flex-col md:flex-row">
@@ -62,8 +66,8 @@ const Footer = () => {
               <h2>Subscribe</h2>
               <div className="flex  ">
                 <input
-                  className="w-44 rounded-sm rounded-r-none p-3"
-                  placeholder="Get product updates"
+                  className="w-60 rounded-sm rounded-r-none p-3"
+                  placeholder="Subscribe to get updated on opening of applications and discounts updates"
                 />
                 <button className="flex items-center justify-center p-3 bg-blue-500 rounded-sm rounded-l-none">
                   <ArrowRight />
@@ -95,21 +99,21 @@ const footerLinks = [
   {
     name: "Company",
     links: [
-      { name: "About Us", url: "#" },
-      { name: "Blog", url: "#" },
-      { name: "Contact Us", url: "#" },
-      { name: "Our Team", url: "#" },
+      { name: "About Us", url: ".about" },
+      { name: "Services", url: "/services" },
+      { name: "Success Stories Us", url: "/success-stories" },
+      { name: "Apply Now", url: "/apply" },
     ],
   },
-  {
-    name: "Product",
-    links: [
-      { name: "Employee database", url: "#" },
-      { name: "Payroll", url: "#" },
-      { name: "Absences", url: "#" },
-      { name: "Time tracking", url: "#" },
-    ],
-  },
+  // {
+  //   name: "Product",
+  //   links: [
+  //     { name: "Employee database", url: "#" },
+  //     { name: "Payroll", url: "#" },
+  //     { name: "Absences", url: "#" },
+  //     { name: "Time tracking", url: "#" },
+  //   ],
+  // },
 ];
 
 const socials = [

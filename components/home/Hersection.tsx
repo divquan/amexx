@@ -9,6 +9,7 @@ import image5 from "@/public/images/5.png";
 import image6 from "@/public/images/6.png";
 import image7 from "@/public/images/7.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hersection = () => {
   return (
@@ -25,7 +26,9 @@ const Hersection = () => {
           your capabilities, whether it&#39;s embarking on educational journeys,
           enrolling in schools abroad, or securing employment opportunities.
         </p>
-        <Button className="w-fit py-4 px-7">Learn about our process</Button>
+        <Link href={"/apply"}>
+          <Button className="w-fit py-4 px-7">Apply now</Button>
+        </Link>
       </div>
       <div className="flex flex-row items-center gap-4 max-w-4xl">
         {images.map((item, index) => {

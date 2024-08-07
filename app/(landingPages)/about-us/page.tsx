@@ -26,14 +26,15 @@ const page = () => {
             </div>
             <div className=" flex flex-col gap-3 flex-1 max-w-md">
               <h2 className="text-lg md:text-xl  font-semibold">
-                We offer meticulous career coaching and assistance in university
-                admissions - We help you realize your career and academic
-                dreams.{" "}
+                Achieve Your Career and Academic Dreams with Expert Coaching and
+                Admissions Assistance!
               </h2>
               <p className="text-sm text-gray-700">
-                Our mission is to create a swift and easy access to a
-                standardized education that transcends beyond geographical
-                boarders and connect people to career opportunities everywhere.
+                Our mission is to provide seamless and accessible standardized
+                education that transcends geographical borders. We aim to
+                connect individuals to career opportunities globally, ensuring
+                everyone has the tools and knowledge to succeed, no matter where
+                they are
               </p>
               <div className="flex  gap-2 justify-between mt-5"></div>
             </div>
@@ -87,7 +88,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-5xl flex flex-col  gap-16 w-full">
+        <div className="max-w-5xl flex flex-col  gap-8 w-full">
           <div className="flex flex-col ">
             <h2 className=" text-xl md:text-3xl font-bold text-left">
               Serving you with the best. <br />
@@ -99,7 +100,7 @@ const page = () => {
               you get the best.
             </span>
           </div>
-          <div className="grid grid-cols-3 gap-2 md:gap-4 md:grid-cols-5 lg:grid-cols-6 items-center justify-center content-center">
+          <div className="flex items-start justify-start ">
             {/* <div className="flex flex-wrap justify-center gap-4 items-center"> */}
             {team.map((item, index) => {
               return (
@@ -110,7 +111,7 @@ const page = () => {
                     src={item.img}
                     // alt={"image of " + item.title}
                     alt={" "}
-                    className="bg-gray-200 rounded-full h-24 w-24"
+                    className="bg-gray-200 rounded-full h-24 w-24 object-cover"
                   />
                   <span className="text-center">{item.name}</span>
                   <span className="text-sm text-gray-400 text-center">
@@ -133,6 +134,7 @@ const page = () => {
                     {item}
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {/* @ts-ignore */}
                     {faqsContent[item].contents.map((item, index) => {
                       return (
                         <div
@@ -154,7 +156,7 @@ const page = () => {
       <CommunitySection
         image={image}
         title={"Do You Want To Elevate Your Application?"}
-        text="Our consultants have a track record of crafting applications that no admission committee or recruiter can ignore"
+        text="Our consultants have a track record of crafting applications that no admission committee or recruiter can ignore"
         buttonName="Contact us"
       />
     </>
@@ -163,66 +165,66 @@ const page = () => {
 
 export default page;
 
+import dennis from "@/public/images/dennis.jpeg";
+import wendy from "@/public/images/wendy.jpeg";
+import adriana from "@/public/images/adriana.jpg";
 const team = [
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
-  { name: "Dennis Frimpong", title: "President & Founder", img: "/#" },
+  { name: "Adriana Nimo", title: "Business strategist ", img: adriana },
+  { name: "Dennis", title: "Consultant", img: dennis },
+  { name: "Wendybel Appiah", title: "Consultant", img: wendy },
 ];
 
 const faqs: ("General" | "Billing" | "Education Services")[] = [
-  "General",
-  "Billing",
+  // "General",
+  // "Billing",
   "Education Services",
 ];
 
 const faqsContent = {
-  General: {
-    contents: [
-      { title: "Home can I book a service", text: "" },
-      {
-        title: "How is the process after booking a service with IBS?",
-        text: "",
-      },
-      {
-        title: "How is IBS' success rate so high?",
-        text: "",
-      },
-      { title: "Home can I book a service", text: "" },
-      {
-        title: "How is the process after booking a service with IBS?",
-        text: "",
-      },
-      {
-        title: "How is IBS' success rate so high?",
-        text: "",
-      },
-    ],
-  },
-  Billing: {
-    contents: [
-      { title: "Home can I book a service", text: "" },
-      {
-        title: "How is the process after booking a service with IBS?",
-        text: "",
-      },
-      {
-        title: "How is IBS' success rate so high?",
-        text: "",
-      },
-      { title: "Home can I book a service", text: "" },
-      {
-        title: "How is the process after booking a service with IBS?",
-        text: "",
-      },
-      {
-        title: "How is IBS' success rate so high?",
-        text: "",
-      },
-    ],
-  },
+  // General: {
+  //   contents: [
+  //     { title: "Home can I book a service", text: "" },
+  //     {
+  //       title: "How is the process after booking a service with IBS?",
+  //       text: "",
+  //     },
+  //     {
+  //       title: "How is IBS' success rate so high?",
+  //       text: "",
+  //     },
+  //     { title: "Home can I book a service", text: "" },
+  //     {
+  //       title: "How is the process after booking a service with IBS?",
+  //       text: "",
+  //     },
+  //     {
+  //       title: "How is IBS' success rate so high?",
+  //       text: "",
+  //     },
+  //   ],
+  // },
+  // Billing: {
+  //   contents: [
+  //     { title: "Home can I book a service", text: "" },
+  //     {
+  //       title: "How is the process after booking a service with IBS?",
+  //       text: "",
+  //     },
+  //     {
+  //       title: "How is IBS' success rate so high?",
+  //       text: "",
+  //     },
+  //     { title: "Home can I book a service", text: "" },
+  //     {
+  //       title: "How is the process after booking a service with IBS?",
+  //       text: "",
+  //     },
+  //     {
+  //       title: "How is IBS' success rate so high?",
+  //       text: "",
+  //     },
+  //   ],
+  // },
   "Education Services": {
     contents: [
       { title: "Home can I book a service", text: "" },

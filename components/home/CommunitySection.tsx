@@ -2,6 +2,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 const CommunitySection = ({
   image,
   title,
@@ -22,9 +23,11 @@ const CommunitySection = ({
           {title}
         </h1>
         <p className="text-center max-w-lg text-lg text-gray-700">{text}</p>
-        <Button className="px-12 font-normal">
-          {buttonName || "Get Started"}
-        </Button>
+        <Link href={"/apply"}>
+          <Button className="px-12 font-normal">
+            {buttonName || "Get Started"}
+          </Button>
+        </Link>
       </div>
     </div>
   );
