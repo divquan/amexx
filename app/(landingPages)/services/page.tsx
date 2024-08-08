@@ -78,6 +78,9 @@ const page = () => {
 };
 
 export default page;
+import pp2 from "@/public/images/pp2.jpeg";
+import pp3 from "@/public/images/pp3.jpeg";
+import pp4 from "@/public/images/pp4.jpeg";
 
 const testimonies = [
   {
@@ -85,21 +88,21 @@ const testimonies = [
     paragraph:
       "I was able to secure full scholarships to two schools I applied to and partial scholarships with others. They literally helped me overcome the financial barriers in my education.",
     position: "Education",
-    img: "/#",
+    img: pp2,
   },
   {
-    name: "Sally Acquah",
+    name: "David Gyasi",
     paragraph:
       "Applying for a masters degree was very stressful for me because i was also working a full time job. But they made the application less tedious and made suitable schedules for me.",
     position: "Education",
-    img: "/#",
+    img: pp3,
   },
   {
-    name: "Sally Acquah",
+    name: "Paa Kofi Kenneth",
     paragraph:
       "Amazing people oriented consultancy. They helped me with applying to schools and choosing courses that best aligned with my dreams and aspirations ",
     position: "Education",
-    img: "/#",
+    img: pp4,
   },
 ];
 

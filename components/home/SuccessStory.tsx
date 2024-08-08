@@ -13,18 +13,22 @@ const SuccessStory = () => {
           Our Clients Get Into The World&#39;s <br /> Most Competitive Schools &
           Companies
         </h2>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap gap-3 mt-3">
           {partnerImages.map((item, index) => {
             return (
-              <Image
-                src={item.src}
-                width={item.height}
-                height={item.height}
-                alt="dfs"
+              <div
+                className="w-[30%] md:w-1/4 h-14 md:h-24 overflow-hidden flex items-center justify-center"
                 key={index}
-                blurDataURL={item.blurDataURL}
-                className="w-1/2 md:w-1/4 object-contain"
-              />
+              >
+                <Image
+                  src={item.src}
+                  width={item.height}
+                  height={item.height}
+                  alt="dfs"
+                  blurDataURL={item.blurDataURL}
+                  className="object-cover  "
+                />
+              </div>
             );
           })}
         </div>
@@ -32,32 +36,33 @@ const SuccessStory = () => {
       <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 h-70 gap-2">
         {succesStories.map((item, index) => {
           return (
-            <Link href="#" key={index}>
-              <li className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate ">
-                <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
-                  {item.text}
+            <li
+              key={index}
+              className=" min-w-5 h-full border border-[rgba(0, 0, 0, 0.5)] rounded-2xl p-4 flex gap-8 flex-col justify-between bg-[#FBFBFB] animate "
+            >
+              <p className=" text-gray-600 icon-slide-in transition-transform duration-500 ease-in-out">
+                {item.text}
+              </p>
+              <div>
+                <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 delay-75 font-extrabold  icon-slide-in transition-transform duration-500 ease-in-out">
+                  {item.position}
                 </p>
-                <div>
-                  <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 delay-75 font-extrabold  icon-slide-in transition-transform duration-500 ease-in-out">
-                    {item.position}
-                  </p>
-                </div>
-              </li>
-            </Link>
+              </div>
+            </li>
           );
         })}
       </ul>
-      <div className="flex flex-col gap-8 items-center">
+      {/* <div className="flex flex-col gap-8 items-center">
         <h3 className="font-bold text-lg">
           Explore Amazing Stories From Our Client
         </h3>
         <Button variant={"secondary"} className="w-fit">
           Read Success Stories
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

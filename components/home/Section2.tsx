@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import heroImage from "@/public/images/unlockpotentials.png";
+import heroImage from "@/public/images/samp.svg";
 import Image from "next/image";
 import Link from "next/link";
 import icon1 from "@/public/icons/sms-edit.svg";

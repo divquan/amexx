@@ -3,17 +3,24 @@ import Image from "next/image";
 import React from "react";
 import consult1 from "@/public/images/consult1.png";
 import consult2 from "@/public/images/consult2.png";
-import { BiCaretLeft } from "react-icons/bi";
-import { FaCaretLeft } from "react-icons/fa6";
-import { PiCaretLeft } from "react-icons/pi";
+import poster from "@/public/images/poster.jpeg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Teacher } from "iconsax-react";
 import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 const page = () => {
   return (
     <div className=" h-screen flex w-screen gap-4 p-4 items-center flex-col md:flex-row">
-      <div className=" flex-1 rounded-md w-full h-full border border-gray-300 p-10 pr-4 flex flex-col justify-between">
+      <div className=" flex-1 rounded-md w-full h-full border border-gray-300 p-10 pr-4 flex flex-col justify-between relative">
+        <div className="absolute top-0 left-0 wß0% ] opacity-10">
+          <Image
+            src={poster.src}
+            height={poster.height}
+            width={poster.width}
+            alt=""
+          />
+        </div>
         <div className="flex flex-col gap-3">
           <div>
             <Button className="aspect-square rounded-md"></Button>
@@ -48,15 +55,15 @@ const page = () => {
       <div className=" flex-1 rounded-md w-full h-full flex flex-col gap-3">
         <div>
           <div className="flex justify-between">
-            <div className="p-2 h-max w-max grid place-content-center bg-muted rounded-full aspect-square cursor-pointer">
-              <FaChevronLeft size={16} />
-            </div>
-            <Image
-              alt="logo "
-              src={"/images/logo.png"}
-              width={100}
-              height={100}
-            />
+            <BackButton />
+            <Link href={"/"}>
+              <Image
+                alt="logo "
+                src={"/images/logo.png"}
+                width={100}
+                height={100}
+              />
+            </Link>
           </div>
           <p className="text-muted-foreground max-w-md mt-3 text-sm">
             Schedule your free discovery call to unlock your educational and

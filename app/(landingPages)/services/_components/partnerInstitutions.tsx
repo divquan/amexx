@@ -9,10 +9,12 @@ const PartnerInstitutions = () => {
         {partnerImages.map((item, index) => {
           return (
             <Image
-              {...item}
+              src={item.src}
+              height={item.height}
+              width={500}
               alt="dfs"
               key={index}
-              className="w-1/2 md:w-1/4 object-contain"
+              className="object-contain"
             />
           );
         })}

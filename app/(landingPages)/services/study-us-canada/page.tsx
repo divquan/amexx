@@ -6,6 +6,7 @@ import usa from "@/public/images/US.png";
 import canada from "@/public/images/Canada.png";
 import Image from "next/image";
 import { Award, AirplaneSquare, Bookmark, Briefcase } from "iconsax-react";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
   return (
@@ -20,8 +21,18 @@ const page = () => {
           </span>
         </div>
         <div className="grid grid-cols-2 w-fit">
-          <Image {...canada} alt="canada-flag" />
-          <Image {...usa} alt="usa-country" />
+          <Image
+            src={canada.src}
+            height={canada.height}
+            width={canada.width}
+            alt="canada-flag"
+          />
+          <Image
+            src={usa.src}
+            height={usa.height}
+            width={usa.width}
+            alt="usa-country"
+          />
         </div>
       </div>
 
@@ -47,10 +58,12 @@ const page = () => {
             immigration provider.
           </p>
         </div>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {offers.map((item, index) => {
-            return <OfferCard item={item} key={index} />;
-          })}
+        <div className=" flex flex-col justify-center items-center">
+          <Link href={"/apply"}>
+            <Button className="text-5xl px-20 py-14 rounded-full ">
+              Apply
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

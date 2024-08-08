@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const TestimonyCard = ({ item }: { item: any }) => {
@@ -7,7 +8,13 @@ const TestimonyCard = ({ item }: { item: any }) => {
         {item.paragraph}
       </p>
       <div className=" flex gap-2">
-        <div className="rounded-full h-12 w-12 bg-gray-200"></div>
+        <Image
+          className="rounded-full h-12 w-12 bg-gray-200 object-cover"
+          src={item.img}
+          height={item.height}
+          width={item.width}
+          alt=""
+        ></Image>
         <div>
           <h3 className="delay-75 font-extrabold text-black  icon-slide-in transition-transform duration-500 ease-in-out">
             {item.name}

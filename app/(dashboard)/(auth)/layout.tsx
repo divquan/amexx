@@ -35,12 +35,14 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             width={consult1.width}
             alt='consult image '
             className='w-[65%]'
+            priority
           />
           <Image
             src={consult2.src}
             height={consult2.height}
             width={consult2.width}
             alt=''
+            priority
             className='absolute right-7 top-3 w-[35%]'
           />
         </div>

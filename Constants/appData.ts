@@ -1,9 +1,16 @@
-import google from "@/public/images/google.png";
-import ColombiaUniversity from "@/public/images/ColombiaUniversity.png";
-import drexel from "@/public/images/drexel.png";
-import netflix from "@/public/images/netflix.png";
+import microsoft from "@/public/images/microsoft-logo.svg";
+import ColombiaUniversity from "@/public/images/meta-logo.svg";
+import drexel from "@/public/images/cornell.svg";
+import netflix from "@/public/images/mit.svg";
+import oxford from "@/public/images/oxford.svg";
 
-export const partnerImages = [google, ColombiaUniversity, netflix, drexel];
+export const partnerImages = [
+  microsoft,
+  ColombiaUniversity,
+  netflix,
+  drexel,
+  oxford,
+];
 
 export const stats = [
   { title: "93%", caption: "Our success rate" },

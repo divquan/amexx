@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import image1 from "@/public/images/successStory.png";
+import image1 from "@/public/images/testing.svg";
+import image2 from "@/public/images/unlockpotential3.svg";
+import pp1 from "@/public/images/pp1.jpeg";
+import pp2 from "@/public/images/pp2.jpeg";
 import Link from "next/link";
 import { Crown1 } from "iconsax-react";
 
@@ -15,7 +18,7 @@ const page = () => {
                 <Crown1 variant="Bold" color="rgba(0, 0, 0, 0.6)" />
               </div>
 
-              <span>From Millicent</span>
+              <span>From Man</span>
             </div>
             <p className="font-bold text-4xl leading-[45px]">
               “Dreams do come true with AMEXT Consult, I am currently pursuing
@@ -27,7 +30,7 @@ const page = () => {
           </div>
           <div className="flex-1">
             <Image
-              src={image1.src}
+              src={image2.src}
               alt=""
               height={image1.height}
               width={image1.width}
@@ -62,9 +65,15 @@ const page = () => {
         <div className="grid grid-cols-2 gap-10">
           <div className="bg-[#FFC300B2] rounded-[36px] flex flex-col p-6 py-12 gap-12">
             <div className=" flex items-center gap-8">
-              <div className="bg-gray-100 rounded-full h-32 w-32 aspect-square " />
+              <Image
+                className="bg-gray-100 rounded-full h-32 w-32 aspect-square object-cover "
+                src={pp2.src}
+                height={pp2.height}
+                width={pp2.width}
+                alt="person "
+              />{" "}
               <div className="flex-1">
-                <h3>Paa Kofi Kenneth</h3>
+                <h3>Sally Acquah</h3>
                 <p className="text-sm text-[#00000099]">
                   Working and studying without stress
                 </p>
@@ -83,7 +92,13 @@ const page = () => {
           </div>
           <div className="h-[466px] bg-[#FF573399] rounded-[36px] flex flex-col p-6 py-12 gap-12">
             <div className=" flex items-center gap-8">
-              <div className="bg-gray-100 rounded-full h-32 w-32 aspect-square " />
+              <Image
+                className="bg-gray-100 rounded-full h-32 w-32 aspect-square "
+                src={pp1.src}
+                height={pp1.height}
+                width={pp1.width}
+                alt="person "
+              />
               <div className="flex-1">
                 <h3>David Gyasi</h3>
                 <p className="text-sm text-[#00000099]">
@@ -96,7 +111,7 @@ const page = () => {
                 I have always dreamt of studying and working abroad to gain
                 experience of diverse cultures. But the expenses and hectic
                 processes involved almost cause dme to give up on that dream,
-                until I heard about AMET consult. They simplified step by step
+                until I heard about AMEXT consult. They simplified step by step
                 process got me into a good school and landed me a job as
                 well-all in a very short period of time.
               </p>

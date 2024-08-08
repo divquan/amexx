@@ -122,3 +122,6 @@ li:hover .icon-slide-in {
     rgba(218, 247, 166, 1)
   );
 }
+.message-area-height{
+  height: calc(100dvh - 77px) !important;
+}
