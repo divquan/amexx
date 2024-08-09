@@ -32,7 +32,7 @@ const Hersection = () => {
           enrolling in schools abroad, or securing employment opportunities.
         </p>
         <Link href={"/apply"}>
-          <Button className="w-fit py-4 px-7">Apply now</Button>
+          <Button className="w-fit py-4 px-7">Learn about our Process</Button>
         </Link>
       </div>
       <div className="flex flex-row items-center gap-4 max-w-4xl">

@@ -27,7 +27,7 @@ const OfferCard = ({ item }: { item: PropType }) => {
             );
           })}
         </div>
-        <Link href={item.actionBtnUrl}>
+        <Link href={"/apply"}>
           <Button className="w-full">Book Now </Button>
         </Link>
       </div>

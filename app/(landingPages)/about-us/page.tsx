@@ -134,12 +134,14 @@ const page = () => {
             </span>
           </div>
           <div className="mt-12 w-full flex items-center justify-center">
-            <Button
-              className="text-3xl sm:text-4xl py-8 sm:py-12 rounded-full w-full"
-              variant={"secondary"}
-            >
-              Apply{" "}
-            </Button>
+            <Link href={"/apply"}>
+              <Button
+                className="text-3xl sm:text-4xl py-8 sm:py-12 rounded-full w-full"
+                variant={"secondary"}
+              >
+                Apply{" "}
+              </Button>
+            </Link>
           </div>
           {/* this component is hidden */}
           <div className=" flex-col gap-5 md:gap-10 mb-4 hidden">
@@ -185,6 +187,7 @@ import dennis from "@/public/images/dennis.jpeg";
 import wendy from "@/public/images/wendy.jpeg";
 import adriana from "@/public/images/adriana.jpg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const team = [
   { name: "Adriana Nimo", title: "Business strategist ", img: adriana },
   { name: "Dennis", title: "Consultant", img: dennis },
