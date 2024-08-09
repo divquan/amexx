@@ -10,6 +10,7 @@ import image6 from "@/public/images/6.png";
 import image7 from "@/public/images/7.png";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "iconsax-react";
 
 const Hersection = () => {
   return (
@@ -17,7 +18,11 @@ const Hersection = () => {
       <div className="flex flex-col gap-6 items-center">
         <h1 className="text-3xl md:text-5xl font-bold">
           from getting{" "}
-          <span className="text-primary"> admissions {"--> "}</span>
+          <span className="text-primary">
+            {" "}
+            admissions{" "}
+            <ArrowRight className="text-primary inline-block " size={32} />{" "}
+          </span>
           visa processes, we guide you on travel on{" "}
           <span className="text-secondary"> abroad</span>
         </h1>
