@@ -39,8 +39,7 @@ const ApplicationForm = () => {
       onLoad={() => window.parent.scrollTo(0, 0)}
       allowTransparency={true}
       allow="geolocation; microphone; camera; fullscreen"
-      src="https://form.jotform.com/242187298929070"
-      frameBorder="0"
+      src="https://form.jotform.com/213502382215546"
       style={{
         minWidth: "100%",
         maxWidth: "100%",
@@ -48,7 +47,6 @@ const ApplicationForm = () => {
         border: "none",
         paddingTop: "100px",
       }}
-      scrolling="no"
     ></iframe>
   );
 };
