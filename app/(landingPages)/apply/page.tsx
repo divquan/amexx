@@ -25,7 +25,7 @@ const ApplicationForm = () => {
     script.onload = () => {
       // @ts-ignore
       window.jotformEmbedHandler(
-        "iframe[id='JotFormIFrame-242187298929070']",
+        "iframe[id='JotFormIFrame-213502382215546']",
         "https://form.jotform.com/"
       );
     };
