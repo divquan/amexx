@@ -25,7 +25,7 @@ const ApplicationForm = () => {
     script.onload = () => {
       // @ts-ignore
       window.jotformEmbedHandler(
-        "iframe[id='JotFormIFrame-213502382215546']",
+        "iframe[id='JotFormIFrame-242187298929070']",
         "https://form.jotform.com/"
       );
     };
@@ -40,13 +40,16 @@ const ApplicationForm = () => {
       allowTransparency={true}
       allow="geolocation; microphone; camera; fullscreen"
       src="https://form.jotform.com/213502382215546"
+      frameBorder="0"
       style={{
         minWidth: "100%",
         maxWidth: "100%",
         height: "539px",
         border: "none",
         paddingTop: "100px",
+        paddingBottom: "40px",
       }}
+      scrolling="no"
     ></iframe>
   );
 };
