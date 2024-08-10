@@ -44,7 +44,7 @@ const ApplicationForm = () => {
       style={{
         minWidth: "100%",
         maxWidth: "100%",
-        height: "1500px",
+        height: "1800px",
         border: "none",
         paddingTop: "100px",
         // paddingBottom: "40px",
